@@ -37,8 +37,6 @@ namespace Delegator
                 app.UseDeveloperExceptionPage();
             }
 
-            return;
-
             ILogger<Startup> logger = app.ApplicationServices.GetRequiredService<ILogger<Startup>>();
             IServerDelegationFeature delegator = app.ServerFeatures.Get<IServerDelegationFeature>();
             if (delegator == null)
