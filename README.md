@@ -47,4 +47,6 @@ You need to have .NET Framework 4.7.2 or higher installed. Follow [these instruc
 
 You need to install the .NET 5.0 Runtime.
 
+**NOTE:** If you want to delegate to IIS applications, for now you will need to run the delegator as **SYSTEM**. You can use the trick [here](https://stackoverflow.com/a/78691/2487788) to do that.
+
 Delegator.exe --urls http://+:8080
