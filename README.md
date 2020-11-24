@@ -19,6 +19,10 @@ This is a simple hello world ASP.NET Framework application. It supports running 
 
 This application delegates requests to one or more other applications. Its behavior is to round robin requests between all the configured destinations which are specified in [appsettings.json]( https://github.com/NGloreous/HttpSysQueueDelegation/blob/main/Delegator/appsettings.json).
 
+## YarpDelegator
+
+This is another example of a delegator application but it integrates with [YARP](https://github.com/microsoft/reverse-proxy) to leverage its config and routing system and also supports a mix of queue delegation and proxying of request. 
+
 # Building
 
 You need to install the .NET 5.0 SDK. To build in Visual Studio, you need use 2019 and make sure it’s up to date.
@@ -50,3 +54,13 @@ You need to install the .NET 5.0 Runtime.
 **NOTE:** If you want to delegate to IIS applications, for now you will need to run the delegator as **SYSTEM**. You can use the trick [here](https://stackoverflow.com/a/78691/2487788) to do that.
 
 Delegator.exe --urls http://+:8080
+
+## YarpDelegator
+
+You need to install the .NET 5.0 Runtime.
+
+**NOTE:** If you want to delegate to IIS applications, for now you will need to run the delegator as **SYSTEM**. You can use the trick [here](https://stackoverflow.com/a/78691/2487788) to do that.
+
+Details on how to configure routes can be found [here](https://microsoft.github.io/reverse-proxy/articles/configfiles.html#configuration-structure).
+
+YarpDelegator.exe --urls http://+:8080
