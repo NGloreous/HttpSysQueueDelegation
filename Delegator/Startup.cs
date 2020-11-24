@@ -59,13 +59,13 @@ namespace Delegator
                             // https://github.com/dotnet/aspnetcore/issues/27126
                             rule.Dispose();
                         }
-                        catch (NullReferenceException ex)
+                        catch (ArgumentNullException ex)
                         {
                             // There is a bug in rule cleanup that causes a failure
                             // https://github.com/dotnet/aspnetcore/issues/26989
                             // This failure then causes a null ref bug to get hit
                             // https://github.com/dotnet/aspnetcore/issues/26982
-                            logger.LogError(ex, "Known issue with disposing delegation rules");
+                            logger.LogWarning(ex, "Known issue with disposing delegation rules");
                         }
                     });
 
